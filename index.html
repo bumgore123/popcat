@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>level up?</title>
+
+</head>
+
+<body>
+   <h1> level up your Charmander!</h1>
+   <img id="i" width="400" height="400" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png">
+   <h2 id="level"> 1 </h2>
+   <button id="b" onclick="levelup()"> give Rare Candy </button>
+
+   <script>
+
+      const level_1 = "https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png"
+      const level_2 = "https://assets.pokemon.com/assets/cms2/img/pokedex/full/005.png"
+      const level_3 = "https://assets.pokemon.com/assets/cms2/img/pokedex/full/006.png"
+
+      const i = document.getElementById("i")
+      const level = document.getElementById("level")
+      const b = document.getElementById("b")
+
+      let 현재레벨 = "level1"; // "level2" // "level3";
+      let point = 1;
+
+      i.src = level_1
+
+      function levelup() {
+         if (현재레벨 === "level1") {
+            // 이미지 주소 => level_2
+            i.src = level_2;
+            level.innerText = 16;
+            현재레벨 = "level2";
+         } else if (현재레벨 === "level2") {
+            // 이미지 주소 => level_3
+            i.src = level_3;    
+            // level.innerText => 3
+            level.innerText = 36
+            현재레벨 = "level3"
+         } else if (현재레벨 === "level3") {
+            alert("Max level reached!");
+         }
+      }
+   </script>
+</body>
+
+</html>
